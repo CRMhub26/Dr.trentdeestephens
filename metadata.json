@@ -1,0 +1,8 @@
+{
+  "name": "Dr. Trent Dee Stephens - Medieval Author Archive",
+  "description": "A premium medieval-inspired author archive and interactive library for Dr. Trent Dee Stephens, showcasing his books, literary chronicles, and medieval worlds.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

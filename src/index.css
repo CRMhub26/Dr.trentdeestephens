@@ -1,0 +1,160 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-cinzel-dec: 'Cinzel Decorative', Georgia, serif;
+    --font-cinzel: 'Cinzel', Georgia, serif;
+    --font-cormorant: 'Cormorant Garamond', Garamond, Georgia, serif;
+    --font-medieval: 'MedievalSharp', cursive, serif;
+    --font-uncial: 'Uncial Antiqua', cursive, serif;
+  }
+
+  body {
+    font-family: var(--font-cormorant);
+    background-color: #0d0b09;
+    color: #ede2c9;
+    background-image: 
+      radial-gradient(circle at 50% 0%, rgba(184, 134, 11, 0.08) 0%, transparent 60%),
+      radial-gradient(circle at 100% 50%, rgba(114, 28, 36, 0.05) 0%, transparent 50%),
+      radial-gradient(circle at 0% 80%, rgba(184, 134, 11, 0.05) 0%, transparent 50%);
+  }
+
+  /* Custom Medieval Scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #090807;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #4a3818;
+    border-radius: 4px;
+    border: 1px solid #7d5e23;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #c59b27;
+  }
+}
+
+.font-cinzel-dec {
+  font-family: var(--font-cinzel-dec);
+}
+
+.font-cinzel {
+  font-family: var(--font-cinzel);
+}
+
+.font-cormorant {
+  font-family: var(--font-cormorant);
+}
+
+.font-medieval {
+  font-family: var(--font-medieval);
+}
+
+.font-uncial {
+  font-family: var(--font-uncial);
+}
+
+/* Medieval Illuminated Drop Cap */
+.drop-cap::first-letter {
+  font-family: var(--font-cinzel-dec);
+  float: left;
+  font-size: 3.5rem;
+  line-height: 0.8;
+  padding-top: 4px;
+  padding-right: 12px;
+  padding-bottom: 2px;
+  color: #d4af37;
+  text-shadow: 0 0 12px rgba(212, 175, 55, 0.4);
+}
+
+/* Parchment Texture Gradients */
+.parchment-card {
+  background: linear-gradient(145deg, #1c1813 0%, #15120e 100%);
+  border: 1px solid rgba(197, 155, 39, 0.22);
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.8), inset 0 1px 0 rgba(212, 175, 55, 0.1);
+}
+
+.parchment-light {
+  background: linear-gradient(135deg, #f5ebd5 0%, #ecdcb9 50%, #dfcda5 100%);
+  color: #2b1f14;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6), inset 0 0 40px rgba(139, 90, 43, 0.25);
+  border: 1px solid #a88243;
+}
+
+.gold-border {
+  border: 1px solid rgba(212, 175, 55, 0.35);
+}
+
+.gold-glow {
+  box-shadow: 0 0 25px rgba(212, 175, 55, 0.25);
+}
+
+.gold-glow-hover:hover {
+  box-shadow: 0 0 35px rgba(212, 175, 55, 0.45), inset 0 0 15px rgba(212, 175, 55, 0.15);
+}
+
+/* Candle flame animations */
+@keyframes candleFlicker {
+  0%, 100% {
+    opacity: 0.9;
+    transform: scale(1) translateY(0);
+    filter: drop-shadow(0 0 8px rgba(245, 158, 11, 0.8));
+  }
+  25% {
+    opacity: 0.75;
+    transform: scale(0.96) translateY(-1px) rotate(-1deg);
+    filter: drop-shadow(0 0 12px rgba(245, 158, 11, 0.95));
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.04) translateY(1px) rotate(1deg);
+    filter: drop-shadow(0 0 6px rgba(245, 158, 11, 0.7));
+  }
+  75% {
+    opacity: 0.82;
+    transform: scale(0.98) translateY(0) rotate(-0.5deg);
+    filter: drop-shadow(0 0 10px rgba(245, 158, 11, 0.85));
+  }
+}
+
+.animate-candle {
+  animation: candleFlicker 3.2s infinite ease-in-out;
+}
+
+/* Subtle Golden Shimmer */
+@keyframes goldShimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.gold-gradient-text {
+  background: linear-gradient(90deg, #d4af37 0%, #fff2bf 45%, #d4af37 70%, #aa8222 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gold-gradient-text-animated {
+  background: linear-gradient(90deg, #d4af37 0%, #fff2bf 40%, #ffd700 60%, #b8860b 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: goldShimmer 8s linear infinite;
+}
+
+/* 3D Book perspective */
+.book-spine-3d {
+  transform: perspective(1000px) rotateY(-8deg);
+  transition: transform 0.5s ease, box-shadow 0.5s ease;
+}
+
+.book-spine-3d:hover {
+  transform: perspective(1000px) rotateY(0deg) translateY(-8px) scale(1.02);
+}
+
